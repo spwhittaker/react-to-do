@@ -6,9 +6,6 @@ class ToDoList extends Component {
       <section>
         <h2>Hi from List</h2>
         <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
       </section>
     );
   }
