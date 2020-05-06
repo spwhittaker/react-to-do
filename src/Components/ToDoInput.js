@@ -14,8 +14,8 @@ class ToDoInput extends Component {
             </div>
             <input
               type="text"
-              className="form-control text-capitalize"
-              placeholder="add to do item"
+              className="form-control"
+              placeholder="Add to do item"
               value={item}
               onChange={handleChange}
             />

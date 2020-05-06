@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 
 class ToDoItem extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div>
-        <h4>Item!!!</h4>
+        <h4>{this.props.title}</h4>
       </div>
     );
   }

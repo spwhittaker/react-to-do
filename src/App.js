@@ -12,17 +12,32 @@ class App extends Component {
         { id: 1, title: "wake up" },
         { id: 2, title: "brush teeth" },
         { id: 3, title: "eat eggs" },
-        { id: uuidv4(), title: "another thing" },
+        { id: 4, title: "another thing" },
       ],
+      id: uuidv4(),
       item: "",
       editItem: false,
     };
   }
   handleChange = (e) => {
-    console.log("something changed");
+    this.setState({ item: e.target.value });
   };
   handleSubmit = (e) => {
-    console.log("something was submitted");
+    e.preventDefault();
+    const newItem = {
+      id: this.state.id,
+      title: this.state.item,
+    };
+    const updatedItems = [...this.state.items, newItem];
+    this.setState(
+      {
+        items: updatedItems,
+        item: "",
+        id: uuidv4(),
+        editItem: false,
+      },
+      () => console.log(this.state.items)
+    );
   };
   handleClearList = () => {
     console.log("clear everything");
@@ -47,7 +62,7 @@ class App extends Component {
               editItem={this.state.editItem}
             />
             <ToDoList
-              item={this.state.items}
+              items={this.state.items}
               handleClearList={this.handleClearList}
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit}
