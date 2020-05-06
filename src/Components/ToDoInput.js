@@ -20,11 +20,17 @@ class ToDoInput extends Component {
               onChange={handleChange}
             />
           </div>
+
           <button
             type="submit"
-            className="btn btn-block btn-primary mt-3 text-capitalize"
+            disabled={item ? false : true}
+            className={
+              editItem
+                ? "btn btn-block btn-success mt-3 text-capitalize"
+                : "btn btn-block btn-primary mt-3 text-capitalize"
+            }
           >
-            Add item
+            {editItem ? "Edit item" : "Add item"}
           </button>
         </form>
       </div>
